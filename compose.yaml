@@ -1,0 +1,26 @@
+services:
+  nodeapp:
+    build: ./backend
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      - ./backend/corpus:/app/corpus
+    depends_on:
+      vectordb:
+        condition: service_healthy
+    env_file:
+      - ./backend/.env
+    restart: unless-stopped
+
+  vectordb:
+    image: qdrant/qdrant
+    ports:
+      - "${QDRANT_PORT:-6333}:6333"
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 3 bash -c '</dev/tcp/localhost/6333' || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 15s

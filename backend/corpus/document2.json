@@ -1,0 +1,7 @@
+{
+  "title": "C'est quoi un embedding en IA ?",
+  "author": "isma",
+  "date": "2025-07-26",
+  "category": "NLP",
+  "text": "Un 'embedding', c'est une facon pour l'IA de transformer du texte (ou une image, un son...) en une suite de nombres appelee vecteur. Ce vecteur capture le sens du texte: deux textes qui veulent dire la meme chose auront des embeddings proches, meme s'ils n'utilisent pas les memes mots. On obtient un embedding grace a des modeles specialises qui 'comprennent' la langue, comme ceux de OpenAI, Hugging Face ou Cohere. En RAG, on utilise ces embeddings pour comparer la question d'un utilisateur a tout le corpus: on mesure la distance entre vecteurs et on garde les passages les plus proches pour repondre. En gros, c'est comme si on resumait chaque document sous forme de carte d'identite numerique facile a comparer!"
+}

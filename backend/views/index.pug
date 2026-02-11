@@ -1,0 +1,38 @@
+doctype html
+html(lang="fr")
+  head
+    title Chat IA avec RAG
+    link(rel="stylesheet", href="/styles.css")
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+  body
+    .container
+      // Header
+      .header
+        h1 Assistant IA - RAG
+        p Recherche intelligente dans vos documents
+
+      // Chat Container
+      .chat-container
+        // Messages Area
+        #messages.messages-area
+          .welcome-message
+            i.fas.fa-robot
+            p Posez votre question sur l'IA, la gestion de projet ou la ville de Pabios
+            p.subtitle Vos documents seront analyses pour vous fournir une reponse precise
+
+        // Input Area
+        .input-area
+          .input-container
+            input#userInput(
+              type="text"
+              placeholder="Tapez votre question..."
+              autocomplete="off"
+              maxlength="500"
+            )
+            button#sendBtn.send-button
+              i#sendIcon.fas.fa-paper-plane
+              span#sendText Envoyer
+
+    // Scripts
+    script(src="/app.js")

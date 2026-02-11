@@ -1,0 +1,24 @@
+{
+  "name": "poc-node-et-ia-rag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "index": "node indexer.js"
+  },
+  "private": true,
+  "dependencies": {
+    "@qdrant/js-client-rest": "^1.14.1",
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "pug": "^3.0.3",
+    "@huggingface/inference": "^2.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
